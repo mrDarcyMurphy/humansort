@@ -27,7 +27,7 @@ module.exports = function(a, b, caseSensitive) {
   var aa = chunkify(a);
   var bb = chunkify(b);
 
-  for (x = 0; aa[x] && bb[x]; x++) {
+  for (var x = 0; aa[x] && bb[x]; x++) {
     if (aa[x] !== bb[x]) {
       var c = Number(aa[x]), d = Number(bb[x]);
       if (c == aa[x] && d == bb[x]) {
@@ -35,5 +35,7 @@ module.exports = function(a, b, caseSensitive) {
       } else return (aa[x] > bb[x]) ? 1 : -1;
     }
   }
+
   return aa.length - bb.length;
+
 }
