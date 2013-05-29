@@ -31,4 +31,10 @@ describe('humansort', function(){
     assert.deepEqual(sorted, ["#a345!sdfjh","1kus","456675efiufbsd","asldkjfh","kus","kus1","skfjh","wh$ehjkbf"])
   })
 
+  it('should sort BSON IDs', function(){
+    var unsorted = ['51a523b0bbe4ba6df6000016', '51a523b0bbe4ba6df600000a', '51a523b0bbe4ba6df6000010']
+    var sorted = unsorted.sort(humansort)
+    assert(sorted, ['51a523b0bbe4ba6df600000a', '51a523b0bbe4ba6df6000010', '51a523b0bbe4ba6df6000016'])
+  })
+
 })
